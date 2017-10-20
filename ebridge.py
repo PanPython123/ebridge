@@ -1,6 +1,6 @@
-# self.score_list ------ Your all info like this: {"Attempt":"..", "credit":"..", "detail_assessment":"..", ... " 'detail_assessment'": [{detailed_every_assessment}]
-# self.name ---> name
-# self.ID ---> ID card
+# self.__score_list ------ Your all info like this: {"Attempt":"..", "credit":"..", "detail_assessment":"..", ... " 'detail_assessment'": [{detailed_every_assessment}]
+# self.__name ---> name
+# self.__ID ---> ID card
 from bs4 import BeautifulSoup
 import requests
 from pprint import pprint
@@ -11,66 +11,66 @@ class Ebridge:
     def __init__(self, account, password):
         self.account = account
         self.password = password
-        self.headers = {
+        self.__headers = {
             "User-Agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Mobile Safari/537.36",
             "Connection": "keep-alive",
             "Host": "ebridge.xjtlu.edu.cn",
             "Referer": "https://ebridge.xjtlu.edu.cn/",
             "Upgrade-Insecure-Requests": "1"}
-        self.data = {"MUA_CODE.DUMMY.MENSYS.1": account, "PASSWORD.DUMMY.MENSYS.1": password,
+        self.__data = {"MUA_CODE.DUMMY.MENSYS.1": account, "PASSWORD.DUMMY.MENSYS.1": password,
                      "SCREEN_WIDTH.DUMMY.MENSYS.1": "1198", "SCREEN_HEIGHT.DUMMY.MENSYS.1": "1216",
                      "%.DUMMY.MENSYS.1": "",
                      "PARS.DUMMY.MENSYS.1": "", "BP101.DUMMY_B.MENSYS.1": "Log in"}
-        self.xjtlu = "https://ebridge.xjtlu.edu.cn/urd/sits.urd/run/"
-        self.session = requests.session()
-        self.get_directed()
-        self.get_score_info()
+        self.__xjtlu = "https://ebridge.xjtlu.edu.cn/urd/sits.urd/run/"
+        self.__session = requests.session()
+        self.__get_directed()
+        self.__get_score_info()
 
-    def get_directed(self):
-        self.session = requests.session()
-        preserved_wb = self.session.get("https://ebridge.xjtlu.edu.cn/urd/sits.urd/run/siw_lgn", headers=self.headers)
-        self.data["RUNTIME.DUMMY.MENSYS.1"] = self.get_runtime(preserved_wb)
-        score_url = self.get_score_page()
+    def __get_directed(self):
+        self.__session = requests.session()
+        preserved_wb = self.__session.get("https://ebridge.xjtlu.edu.cn/urd/sits.urd/run/siw_lgn", headers=self.__headers)
+        self.__data["RUNTIME.DUMMY.MENSYS.1"] = self.__get_runtime(preserved_wb)
+        score_url = self.__get_score_page()
 
         # request and save the the score table, which is in score page
-        score_wb = self.session.get(score_url)
+        score_wb = self.__session.get(score_url)
         score_wb_soup = BeautifulSoup(score_wb.text, "lxml")
         score_wb_url = [i for i in score_wb_soup.find_all("a") if i.text == "Full Academic Records"][0].get(
             "href").replace("../run/", "")
-        whole_score_url = self.xjtlu + score_wb_url
-        self.score_page = whole_score_url
+        whole_score_url = self.__xjtlu + score_wb_url
+        self.__score_page = whole_score_url
 
     # if post the home page, get the score page
-    def get_score_page(self):
-        home_page = self.session.get(self.get_post_data())
+    def __get_score_page(self):
+        home_page = self.__session.get(self.__get_post_data())
         home_page_data = BeautifulSoup(home_page.text, "lxml")
-        score_url = self.xjtlu + home_page_data.find_all("a", {"title": "Academic Records"})[0].get("href")
+        score_url = self.__xjtlu + home_page_data.find_all("a", {"title": "Academic Records"})[0].get("href")
         return score_url
 
     # util get the runtime data, post the data
-    def get_post_data(self):
-        session_whole_post = self.session.post("https://ebridge.xjtlu.edu.cn/urd/sits.urd/run/siw_lgn",
-                                               headers=self.headers, data=self.data)
+    def __get_post_data(self):
+        session_whole_post = self.__session.post("https://ebridge.xjtlu.edu.cn/urd/sits.urd/run/siw_lgn",
+                                               headers=self.__headers, data=self.__data)
         soup = BeautifulSoup(session_whole_post.text, "lxml")  # have been successfully login!
         directed_url = soup.find_all("a")[1].get("href")
-        whole_directed_url = self.xjtlu + directed_url
+        whole_directed_url = self.__xjtlu + directed_url
         return whole_directed_url
 
     # runtime is required message and changed with login html
-    def get_runtime(self, wb_data):
+    def __get_runtime(self, wb_data):
         soup = BeautifulSoup(wb_data.text, "lxml")
         run_time = soup.find_all("input", {"name": "RUNTIME.DUMMY.MENSYS.1"})[0].get("value")
         return run_time
 
-    def get_score_info(self):
-        wb_data = self.session.get(self.score_page)
+    def __get_score_info(self):
+        wb_data = self.__session.get(self.__score_page)
         soup = BeautifulSoup(wb_data.text, "lxml")
         ID = soup.select("div.sv-panel-body > div > div > div > div:nth-of-type(2) > b")[0].text
-        name = soup.select("div.sv-panel-body > div > div > div > div:nth-of-type(4)")[0].text.replace("&nbsp", "")
-        self.ID = ID
-        self.name = name
+        name = soup.select("div.sv-panel-body > div > div > div > div:nth-of-type(4)")[0].text.replace("&nbsp", " ")
+        self.__ID = ID
+        self.__name = name
 
-        self.score_list = []
+        self.__score_list = []
         detail_score = soup.find_all("table", {"class": "sitstablegrid"})
         # start prasing_general_info, start with 1, 0 is none because it is the title
         tr = soup.select("table > tr")[1:len(detail_score) + 1]
@@ -106,23 +106,41 @@ class Ebridge:
                 module_detail_score_list.append(detail_line)
             single_course_info["detail_assessment"] = module_detail_score_list
             counter += 1
-            self.score_list.append(single_course_info)
+            self.__score_list.append(single_course_info)
 
+    @property
+    def score_data(self):
+        return self.__score_list
+
+    @property
+    def student_name(self):
+        return self.__name
+
+    @property
+    def student_ID(self):
+        return self.__ID
+
+class Score(Ebridge):
+    @property
     def average(self):
         total_credit = 0
         total_score = 0
-        for i in self.score_list:
+        for i in self.score_data:
             mark = float(i["mark"])
             credit = float(i["credit"])
             single_mark = mark * credit
             total_credit += credit
             total_score += single_mark
-
         return total_score / total_credit
 
 
+
 if __name__ == "__main__":
-    name = input("Input Your EBridge account: ")
-    password = input("Input Your EBridge password: ")
-    test = Ebridge(name, password)
-    print(test.average())
+    # name = input("Input Your ebridge account: ")
+    # password = input("Input Your ebridge password: ")
+    name = "Dengpan.Yuan16"
+    password = "f3am1ms"
+    test = Score(name, password)
+    print(test.student_name, test.student_ID, test.average)
+
+    # print(test.average())
