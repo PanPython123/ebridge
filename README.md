@@ -4,7 +4,7 @@ If you run this program directly, you could view your average score if you input
 Some useful instance and method are following:
 > self.score_list. #This is most useful, the data structure just like this:
 ```python
-['Attempt': '1',
+[{'Attempt': '1',
   'credit': '5',
   'detail_assessment': [{'assessment_type': 'Coursework',
                          'component_title': 'Writing Tasks',
