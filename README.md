@@ -1,8 +1,9 @@
-This is just a personal using python oop practice. This is a tool for getting ebridge score data for XJTLU students.
+##Introduction
+---------
+This is just a personal using python oop practice. This is a tool for getting ebridge score data for XJTLU students, and for fun :) **If you want to play with it, `cd` to this directory and use your console `pip install requirements.txt` to install all relied packages.**
 
-If you run this program directly, you could view your average score if you input the right account and password!
-Some useful instances and methods are following:
-> self.score_list. #This is most useful, the data structure just like this:
+The program has three main classes:
+1. The first one is `Ebridge()`, which is used to post personal data to direct to score page to get score data. The property `score_data` is very useful for I have been structed all score items as followed: 
 ```python
 [{'Attempt': '1',
   'credit': '5',
@@ -31,6 +32,10 @@ Some useful instances and methods are following:
   ```
   This is similar with your ebridge one module score:
   ![image](http://ww3.sinaimg.cn/large/0060lm7Tly1fko0vy0flrj31kw0enacu.jpg)
+
+2. The second class is 
+> self.score_list. #This is most useful, the data structure just like this:
+
   
 > self.name, your name
 
