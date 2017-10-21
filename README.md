@@ -1,10 +1,12 @@
-##Introduction
+## Introduction
+
 ---------
 
 This is just a personal using python oop practice. This is a tool for getting ebridge score data for XJTLU students, and for fun :) **If you want to play with it, `cd` to this directory and use your console `pip install requirements.txt` to install all relied packages.**
 
 
-##Funny Classes
+## Funny Classes
+
 ---------
 
 The program has three main classes:
@@ -39,7 +41,7 @@ The program has three main classes:
   ![image](http://ww3.sinaimg.cn/large/0060lm7Tly1fko0vy0flrj31kw0enacu.jpg)
 
 2. The second class is `Score(Ebridge)`, it extends class `Ebridge()` mainly using `scroe_data` from father class, it has three useful methods ¡`analyze()`, if you failed some courses, it will display your unpassed information like this: 
-```python
+```txt
 Dear Somebody, These modules you did really terrible: 
 ModuleCode              Description                                                     YourScore
 +-----------------------+----------------------------------------------------------------+----------+
@@ -49,7 +51,7 @@ SomeMoudle              SomeD                                                   
 ```
 
 Besides, if you want to see detail, it will ask for your detial score if yur input `Y`. The method has been concealed in the as the inner method for `Score` class. You can also unwrapped with it to have a fun. The detail score is like this:
-```python
+```txt
 Dear Somebody, These modules you did really terrible: 
 ModuleCode              Assessments/Coursework       Type                YourScore
 +-----------------------+----------------------------+-----------------+----------+
@@ -73,8 +75,9 @@ Lastly, the public method `average` would print your average score driectly.
 The file tree is `ebridge_website` and `web_frame`. `ebridge_website` is performed as the temeplate to render `fake_score.html` and `web_frame` is for inserting data. IF you call `fake_score()` method in the `FakeScore()` class, you will get a file name `fake_score.html` in the `ebridge_website`, the effect is just like in the gif :) 
 
 
-##Other properties
-------------------
+## Other properties
+
+------
 
 Some other properties are waiting for you to have a try:
 
