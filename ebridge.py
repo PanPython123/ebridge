@@ -6,7 +6,7 @@ import requests
 import re
 
 
-class Ebridge:
+class Ebridge():
     def __init__(self, account, password):
         self.account = account
         self.password = password
@@ -153,13 +153,15 @@ class Score(Ebridge):
 
         if self.fail_list:
             print(
-                "Dear " + self.blue + self.student_name + self.red + ", Unfortunately during this semester you have failed these modules: ")
-            print("ModuleCode              Description                                    YourScore")
-            print("+-----------------------+----------------------------------------------+----------+")
+                "Dear " + self.blue + self.student_name + self.red + ", Unfortunately during this semester you have failed these modules: " + self.white)
+            print("ModuleCode              Description                                                     YourScore")
+            print(
+                "+-----------------------+----------------------------------------------------------------+----------+")
             for t in self.fail_list:
-                print(t["module_code"] + "------------------+" + t["module_title"] + "+-----------------------+" + t[
+                print(t["module_code"] + "                  " + t["module_title"] + "                  " + t[
                     "mark"])
-            print("+-----------------------+----------------------------------------------+----------+")
+            print(
+                "+-----------------------+----------------------------------------------------------------+----------+")
             addition = input("Do you want to View your detail score?(Y/N)")
             if addition == "Y":
                 self.__detail_analyse()
@@ -178,15 +180,15 @@ class Score(Ebridge):
     def __detail_analyse(self):
         if self.fail_list:
             for i in self.fail_list:
+                print(
+                    "Dear " + self.blue + self.student_name + self.red + ", These modules you did really terrible: " + self.white)
+                print(
+                    "ModuleCode              Assessments/Coursework       Type                YourScore")
+                print("+-----------------------+----------------------------+-----------------+----------+")
                 for m in i["detail_assessment"]:
                     print(
-                        "Dear " + self.blue + self.student_name + self.red + ", These modules you did really terrible: ")
-                    print(
-                        "ModuleCode              Assessments/Coursework       Type                YourScore")
-                    print("+-----------------------+----------------------------+-----------------+----------+")
-                    print(
-                        i["module_code"] + "------------------+" + m["module_title"] + "+-----------------------+" + m[
-                            "component_title"] + "+-------------+" + self.red + m["mark"] + "-----+")
+                        i["module_code"] + "                   " + m["component_title"] + "                  " + m[
+                            "component_title"] + "          " + self.red + m["mark"] + self.white)
                     print("+-----------------------+----------------------------------------------+----------+")
 
 
@@ -234,5 +236,5 @@ class FakeScore(Ebridge):
 if __name__ == "__main__":
     name = input("Input Your ebridge account: ")
     password = input("Input Your ebridge password: ")
-    test = FakeScore(name, password)
-    test.fake_score_table()
+    fake_score = FakeScore(name, password)
+    fake_score.fake_score_table()
