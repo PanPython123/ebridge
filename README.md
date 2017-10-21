@@ -1,13 +1,10 @@
 ## Introduction
 
----------
 
 This is just a personal using python oop practice. This is a tool for getting ebridge score data for XJTLU students, and for fun :) **If you want to play with it, `cd` to this directory and use your console `pip install requirements.txt` to install all relied packages.**
 
 
 ## Funny Classes
-
----------
 
 The program has three main classes:
 1. The first one is `Ebridge()`, which is used to post personal data to direct to score page to get score data. The property `score_data` is very useful for I have been structed all score items as followed:  
@@ -77,13 +74,12 @@ The file tree is `ebridge_website` and `web_frame`. `ebridge_website` is perform
 
 ## Other properties
 
-------
-
 Some other properties are waiting for you to have a try:
 
 > self.name, your name
 
 > self.ID, your ID card nubmer
 
----------
+-----
+
 Maybe this project would be invalid once if ebridge changes the score data
