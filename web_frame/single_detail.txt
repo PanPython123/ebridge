@@ -1,0 +1,6 @@
+<tr>
+           <td>{{ Component title }}</td>
+          <td align="center">{{ Assessment type }}</td>
+          <td align="center">{{ Weight }}</td>
+        <td align="center"> {{ Mark }}</td>
+</tr>

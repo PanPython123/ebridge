@@ -3,7 +3,6 @@
 # self.__ID ---> ID card
 from bs4 import BeautifulSoup
 import requests
-from pprint import pprint
 import re
 
 
@@ -18,17 +17,23 @@ class Ebridge:
             "Referer": "https://ebridge.xjtlu.edu.cn/",
             "Upgrade-Insecure-Requests": "1"}
         self.__data = {"MUA_CODE.DUMMY.MENSYS.1": account, "PASSWORD.DUMMY.MENSYS.1": password,
-                     "SCREEN_WIDTH.DUMMY.MENSYS.1": "1198", "SCREEN_HEIGHT.DUMMY.MENSYS.1": "1216",
-                     "%.DUMMY.MENSYS.1": "",
-                     "PARS.DUMMY.MENSYS.1": "", "BP101.DUMMY_B.MENSYS.1": "Log in"}
+                       "SCREEN_WIDTH.DUMMY.MENSYS.1": "1198", "SCREEN_HEIGHT.DUMMY.MENSYS.1": "1216",
+                       "%.DUMMY.MENSYS.1": "",
+                       "PARS.DUMMY.MENSYS.1": "", "BP101.DUMMY_B.MENSYS.1": "Log in"}
         self.__xjtlu = "https://ebridge.xjtlu.edu.cn/urd/sits.urd/run/"
         self.__session = requests.session()
         self.__get_directed()
         self.__get_score_info()
 
+        self.purple = "\033[1;35;m"
+        self.red = "\033[1;31;m"
+        self.white = "\033[0m"
+        self.blue = "\033[1;36;m"
+
     def __get_directed(self):
         self.__session = requests.session()
-        preserved_wb = self.__session.get("https://ebridge.xjtlu.edu.cn/urd/sits.urd/run/siw_lgn", headers=self.__headers)
+        preserved_wb = self.__session.get("https://ebridge.xjtlu.edu.cn/urd/sits.urd/run/siw_lgn",
+                                          headers=self.__headers)
         self.__data["RUNTIME.DUMMY.MENSYS.1"] = self.__get_runtime(preserved_wb)
         score_url = self.__get_score_page()
 
@@ -50,7 +55,7 @@ class Ebridge:
     # util get the runtime data, post the data
     def __get_post_data(self):
         session_whole_post = self.__session.post("https://ebridge.xjtlu.edu.cn/urd/sits.urd/run/siw_lgn",
-                                               headers=self.__headers, data=self.__data)
+                                                 headers=self.__headers, data=self.__data)
         soup = BeautifulSoup(session_whole_post.text, "lxml")  # have been successfully login!
         directed_url = soup.find_all("a")[1].get("href")
         whole_directed_url = self.__xjtlu + directed_url
@@ -120,6 +125,7 @@ class Ebridge:
     def student_ID(self):
         return self.__ID
 
+
 class Score(Ebridge):
     @property
     def average(self):
@@ -131,16 +137,102 @@ class Score(Ebridge):
             single_mark = mark * credit
             total_credit += credit
             total_score += single_mark
-        return total_score / total_credit
+        average = total_score / total_credit
+        if (average > 70):
+            return "Your score is " + self.purple + str(average) + " excellent :) "
+        elif (average < 40):
+            return "Your score is " + self.red + str(average) + " loser :( "
+        else:
+            return "Your score is " + self.white + str(average) + " normal : | "
 
+    def analyse(self):
+        self.fail_list = []
+        for i in self.score_data:
+            if i["grades"] != "P":
+                self.fail_list.append(i)
+
+        if self.fail_list:
+            print(
+                "Dear " + self.blue + self.student_name + self.red + ", Unfortunately during this semester you have failed these modules: ")
+            print("ModuleCode              Description                                    YourScore")
+            print("+-----------------------+----------------------------------------------+----------+")
+            for t in self.fail_list:
+                print(t["module_code"] + "------------------+" + t["module_title"] + "+-----------------------+" + t[
+                    "mark"])
+            print("+-----------------------+----------------------------------------------+----------+")
+            addition = input("Do you want to View your detail score?(Y/N)")
+            if addition == "Y":
+                self.__detail_analyse()
+            else:
+                afraid = input("Are you afraid?(Y/N)")
+                if afraid == "N":
+                    print("Show you detail :) following:")
+                    self.__detail_analyse()
+                else:
+                    print("Loser")
+        else:
+            print(
+                "Dear " + self.blue + self.student_name + self.purple + " StudyAbility●MAX " + self.white + " NONE OF YOUR SCORE IS UNDER 40")
+
+    # analyze the detail ass which fails
+    def __detail_analyse(self):
+        if self.fail_list:
+            for i in self.fail_list:
+                for m in i["detail_assessment"]:
+                    print(
+                        "Dear " + self.blue + self.student_name + self.red + ", These modules you did really terrible: ")
+                    print(
+                        "ModuleCode              Assessments/Coursework       Type                YourScore")
+                    print("+-----------------------+----------------------------+-----------------+----------+")
+                    print(
+                        i["module_code"] + "------------------+" + m["module_title"] + "+-----------------------+" + m[
+                            "component_title"] + "+-------------+" + self.red + m["mark"] + "-----+")
+                    print("+-----------------------+----------------------------------------------+----------+")
+
+
+class FakeScore(Ebridge):
+    def fake_score_table(self):
+        score_table_info = ""
+        for i in self.score_data:
+            file1 = open("web_frame/score_table.txt")
+            score_table = file1.read()
+            file1.close()
+            replaced_text = score_table.replace("{{ Period }}", i["period"]).replace("{{ Module Code }}",
+                                                                                     i["module_code"]).replace(
+                "{{ Credit }}", i["credit"]).replace("{{ Mark }}", "100").replace("{{ Grade }}", "P").replace(
+                "{{ Module Title }}", i["module_title"]).replace("{{ Attempt }}", "1")
+            component_marks = ""
+            for single_info in i["detail_assessment"]:
+                single_file = open("web_frame/single_detail.txt")
+                single_detail = single_file.read()
+                single_file.close()
+                replaced_single_detail = single_detail.replace("{{ Component title }}",
+                                                               single_info["component_title"]).replace(
+                    "{{ Assessment type }}", single_info["assessment_type"]).replace("{{ Weight }}",
+                                                                                     single_info["weight"]).replace(
+                    "{{ Mark }}", "100")
+                component_marks += replaced_single_detail
+            final_info = replaced_text.replace("{{ single_detail }}", component_marks).replace("{{ Module_Code }}",
+                                                                                               i["module_code"])
+            score_table_info += final_info
+        clean_score_table = score_table_info.replace("\n", "")
+
+        file = open("web_frame/fake_frame.txt", "rb")
+        frame_info = file.read()
+        decoded = frame_info.decode('utf-8')
+        file.close()
+        frame_info_replaced = decoded.replace("{{ student.ID }}", self.student_ID).replace("{{ student.name }}",
+                                                                                           self.student_name).replace(
+            "{{ score_table }}", clean_score_table)
+        clean_frame_info = frame_info_replaced.replace("\n", "")
+        fake_score = open("ebridge_website/fake_score.html", "wb")
+        fake_score.write(clean_frame_info.encode("utf-8"))
+        fake_score.close()
+        print(" Hey" + self.red + " Fake score has been produced! :)")
 
 
 if __name__ == "__main__":
-    # name = input("Input Your ebridge account: ")
-    # password = input("Input Your ebridge password: ")
-    name = "Dengpan.Yuan16"
-    password = "f3am1ms"
-    test = Score(name, password)
-    print(test.student_name, test.student_ID, test.average)
-
-    # print(test.average())
+    name = input("Input Your ebridge account: ")
+    password = input("Input Your ebridge password: ")
+    test = FakeScore(name, password)
+    test.fake_score_table()

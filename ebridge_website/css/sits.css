@@ -1,0 +1,2656 @@
+@import url("siw_ymes.css");
+
+/* start of sits.css */
+
+/*----------------------------------------------------------------------*/
+/*  FILENAME 	:  sits.css  						*/
+/*  DESC	:  main style sheet for use with SITS e:Vision 		*/
+/*----------------------------------------------------------------------*/
+/*  REVISIONS:								*/
+/*	Date		Name		Reason				*/
+/*	---------	----------	--------------------------------*/
+/*  24-MAY-11   BOWK3		Added contents, enhance readability. */
+/*  28-SEP-07	BARK1		New Branding for v7.5.0 - Tribal Design */
+/*  28-SEP-07	LEWR1		CAPTCHA Styles  -added by LEWR1   for v7.5.0  */
+/*  28-MAR-07	REED1		NESTED TABLE - OUTLINE ONLY - added by REED1 for 7.4.1 */
+/*  30-AUG-06   BARK1	    Finalised for vers 7.4.0  - Tribal design */
+/*  15-SEP-05   KIRA1	    Finalised for vers 7.3.0  - design from MySITS.com incorporated as default */
+/*  nb - Version 7.3.0 new stlye classes only for the default release design. No new required styles added */
+/*  12-apr-05   KIRA1	    Finalised for vers 7.2.1 */
+/*  01-apr-05   BARK1	    DIV style portal classes added for vers 7.2.1 */
+/*  23-mar-05   IREl1	    Added forum classes  at the end */
+/*  22-Dec_04 - KIRA1 		SITS Web Standards classes added (at end)  */
+/*	16-04-04 	KIRA1 	 	IPP pages now use sits-ipp.css (copy of sits.css) */
+/*	16-Jan-04	KIRA1		converted to percentage font sizes for accessibility	*/
+/*	28-Oct-03	BARK1		updated for version 7.1.0	*/
+/*	new page tabs classes added for portal - RENM1		*/
+/*----------------------------------------------------------------------*/
+
+
+/* Contents 												   */
+/* Non-Portal Page Styles							    0xxxDD */
+/* Portal TABLE Mode Styles						        0xxxEE */
+/* Portal DIV Mode Styles							    0xxxFF */
+
+
+/* The BODY style applies to every page.  If a background image or background  */
+/* colour is required it should be applied here                                */
+/* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+/*
+body {
+	font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+	color: #666;
+	background-color: #FFFFFF;
+
+}
+*/
+
+/* Link styles for the e:Vision site                                         */
+/* note that portal links are subclassed by portallink                       */
+/* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+/*
+a:link {
+	text-decoration: underline;
+	font-weight: normal;
+	color: #333
+}
+a:visited {
+	text-decoration: underline;
+	font-weight: normal;
+	color: #333
+}
+a:hover {
+	text-decoration: underline;
+	font-weight: normal;
+	color: #666
+}
+a:active {
+	text-decoration: underline;
+	font-weight: normal;
+	color: #666
+}
+*/
+
+/* pagetitle is used on the descriptive text provided below each page title, this style is used  */
+/* this style is used on non-portal page, for portal pages see sitsportalpagetitle                */
+.pagetitle {
+	/*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	font-size: 120%; /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	color: #08295C;
+	font-weight: bold;
+	border-bottom:1px solid #08295C;
+	margin:0px;
+}
+
+/* pagemsg is used on the descriptive text provided below each page title, this style is used  */
+/* this style is used on non-portal page, for portal pages see sitsportalpagedesc              */
+.pagemsg {
+	/*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+	font-size:75%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	color: #666666;
+	margin-left:0px;
+	margin-top:10px;
+	margin-bottom:15px;
+	text-align:justify;
+
+}
+
+/*******************************************************************************************/
+/* **** BEGIN Table Classes                                                        *********/
+
+/* the following classes format table elements - numbers 1 and 2 allow two levels of table */
+/* to be styled differently, these styles are used on non-portal pages                     */
+.tabletitle1, .tabletitleajax {
+	/*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+	font-size:75%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	color: #FFFFFF;
+	padding:1px 1px 1px 6px ;
+	font-weight: bold;
+	text-align: left;
+	background-color: #08295C;
+	/* background:#BCBFC4 url(../images/tabletitle_bg_blue-white-corner.jpg) top left no-repeat; */
+}
+
+.tabletitle2  {
+	/*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+	font-size: 75%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #BCBFC4
+}
+
+/* used on any optional extra descriptive text inside each data table (just below table title) */
+.tablemsg1 {
+	/*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	background-image: url(../images/tabledesc_bg.gif);
+    background-color: #F1EFE2;
+	color: #333333;
+	font-weight: normal;
+	/*font-size: 75%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	text-align: left;
+	border-bottom: 1px solid #BCBFC4;
+}
+.tablemsg2 {
+	/*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+	font-size: 75%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	color: #666;
+	background-color: #ebebeb
+}
+
+/* used on TD tag for record count message */
+.recordcount {
+	/*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+	font-size: 75%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	color: #666;
+	background-color: #FFFFFF;
+}
+
+/* column headings on tables */
+.colhead1 {
+	/*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+	font-size: 75%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	color: #666;
+	background-color: #ebebeb;
+	font-weight: bold
+}
+.colhead2 {
+	/*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+	font-size: 75%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	color: #ebebeb;
+	background-color: #666;
+	font-weight: bold
+}
+
+/* row headings on tables */
+.rowhead1 {
+	/*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+	font-size: 75%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	color: #08295C;
+	background-color: #ebebeb;
+	font-weight: bold
+}
+.rowhead2 {
+	/*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+	font-size: 75%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	color: #666;
+	background-color: #ebebeb;
+	font-weight: bold
+}
+
+/* data1 is the main table data format. Applied to the TD tag for single record                 */
+/* display and to the TR tag along with data1over using javascript for multiple record display  */
+/* Where applied to the TR tag must be used in conjunction with data1over and data1nobg         */
+.data1 {
+	/*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+	font-size: 75%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	color: #666;
+	font-weight: normal
+}
+.data1over {
+	/*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+	font-size: 75%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	color: #666;
+	background-color: #ebebeb;
+	font-weight: normal
+}
+
+/* same as data1 but used for second level data tables */
+.data2 {
+	/*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+	font-size: 75%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	color: #000000;
+	font-weight: normal;
+	background-color: #FFFFFF
+}
+.data2over {
+	/*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+	font-size: 75%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	color: #000000;
+	background-color: #ebebeb;
+	font-weight: normal
+}
+
+/* data1nobg and data2nobg provide a backwards compatibility fix for Netsacpe below v6.2 */
+/* data1nobg  and data2nobg should never be given a background colour, hence 'nobg'. */
+/* these two classes are applied to the TD tag where a row highlight effect is used by adding data1 and data1over to the TR tag using javascript. */
+.data1nobg {
+	/*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	color: #666;
+	font-weight: normal
+}
+.data2nobg {
+	/*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	color: #666;
+	font-weight: normal
+}
+
+/* KIRA1 - Fix for relative size text where js row highlight is used */
+/* (data1 is on TR and rowhead1 is on TD) */
+/* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+/*
+.data1 .rowhead1 {
+	font-size:100%;
+}
+.data1over .rowhead1 {
+	font-size:100%;
+}
+.data2 .rowhead2 {
+	font-size:100%;
+}
+.data2over .rowhead2 {
+	font-size:100%;
+}
+*/
+/* **** END Table Classes                                                     *********/
+
+
+/* *****  BEGIN Form Classes                                                          */
+/*                                                                                    */
+/*        The form classes determine the look of forms in eVision. These classes      */
+/*        are not used in the portal but are part of the forms.                       */
+/*                                                                                    */
+/*        !!!! VERY IMPORTANT - ALL FORM CLASSES ONLY TO BE EDITED IN NOTEPAD!!!!     */
+
+/*  WHEM1 - forminfree1 and blockfree added 25/02/02 - required in IPP -
+    to fix uniface bug where class tag is added to TD on dynamically generated
+	mandatory fields                                                                  */
+.forminfree1 { /*FONT:100%  verdana bold;*//* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */ COLOR: #000000; BACKGROUND-COLOR: #ffffcc }
+.forminmand { /*FONT:100%  verdana bold;*//* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */ COLOR: #000000; BACKGROUND-COLOR: #f7b7ce }
+
+/*  THOS1 - forminnonedit added 14/OCT/2002 - required in generic data maintenance,
+    for input fields that are non-editable                                            */
+.forminnonedit { BORDER-RIGHT: #666 1px solid; BORDER-TOP: #666 1px solid; /*FONT:100%  verdana bold;*//* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */ BORDER-LEFT: #666 1px solid; COLOR: #000000; BORDER-BOTTOM: #666 1px solid; BACKGROUND-COLOR: #cccccc }
+
+/* background colours applied to TD tags for form input boxes and submit buttons      */
+.bgformin { background-color: #FFFFFF; /*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif; font-size: 75%;*//* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */ color: #666}
+.bgformsub {  background-color: #FFFFFF; /*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif; font-size: 75%;*//* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */ font-weight: bold; color: #666}
+
+/* bginside is the background colour for all data tables (normally white)
+   applied to TABLE tag                                                               */
+.bginside, .bginsideajax { background-color: #FFFFFF;}
+
+/* bgborder is the colour of the data table border.  Applied to 'border' table
+   TABLE tag                                                                          */
+.bgborder { background-color: #08295C}
+
+
+/* PRE tag formatted for use in web reports in evision - Ken Barrett */
+pre {  /*font-family: "Courier New", Courier, mono;*/ font-size: 120%;/* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */ font-weight: normal; color: #000000; background-color: #FFFFFF}
+
+/* Error notation 1 */
+.error1 {  /*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif; font-size: 75%;*//* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */ color:  #FF0000}
+
+/* Two classes used for documentation only - not used in evision hts files - Mike Steele added MAy2002. */
+/* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+/*
+.letter_body {  font-family: "Times New Roman", Times, serif; font-size: 90%; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; text-transform: none; color: #003063}
+.letter_body_strong {  font-family: "Times New Roman", Times, serif; font-size: 90%; font-style: normal; line-height: normal; font-weight: bold; font-variant: normal; text-transform: none; color: #003063}
+.date { font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif; font-size: 75%; font-weight: normal; color: #666}
+*/
+
+/* these classes have been used in a few places in previous versions but are NOT part of the web standards - they are still listed for backwards compatibility but should not be added to any new Hts files. */
+.pagehelptext {  /*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif; font-size: 75%;*//* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */ color: #666}
+
+.blockfree { BORDER-RIGHT: gray 2px solid; BORDER-TOP: gray 1px solid; BORDER-LEFT: gray 1px solid; BORDER-BOTTOM: gray 2px solid;  }
+
+/*JONP1/ BAIA1 - Classes used in Container Types - examples only (v6.2.1) */
+
+.portalcontitle1  {/*font-family: "Gill Sans MT", sans-serif;*/ font-size: 105%;/* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */ font-weight: bold; color: #FFFFFF; background-attachment: fixed; background-image:  url(../images/tabletitle_bg_blue.jpg); background-repeat: no-repeat; background-position: 0px 0px; padding-left: 0px; padding-top: 0px; padding-bottom: 5px;}
+.reporttitle { /*font:bold 8pt/12pt "Arial, Helvetica";*//* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */ background-image: url(../images/backgrounds/grey-tab.gif); background-repeat: no-repeat; background-position: top right; color: white}
+.xp-title { /*font:bold 8pt/12pt "Arial, Helvetica";*//* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */background-image: url(../images/xp-title.gif); background-repeat: repeat-x; background-position: top left; color: white}
+.reportbackground { background-image: url(../images/backgrounds/reportsbackground.gif); background-repeat: no-repeat; background-position: bottom right; color: white}
+.informationtitle { /*font:bold 8pt/12pt "Arial, Helvetica";*//* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */ background-image: url(../images/backgrounds/grey-tab.gif); background-repeat: no-repeat; background-position: top right; color: floralwhite}
+.informationbackground { background-image: url(../images/backgrounds/reportsbackground.gif); background-repeat: no-repeat; background-position: bottom right; color: white}
+.actionstitle { /*font:bold 8pt/12pt "Arial, Helvetica";*//* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */ background-image: url(../images/backgrounds/grey-tab.gif); background-repeat: no-repeat; background-position: top right; color: white}
+.actionsbackground { background-image: url(../images/backgrounds/reportsbackground.gif); background-repeat: no-repeat; background-position: bottom right; color: lightyellow}
+.personaltitle { /*font:bold 8pt/12pt "Arial, Helvetica";*//* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */ background-image: url(../images/backgrounds/grey-tab.gif); background-repeat: no-repeat; background-position: top right; color: lightgreen}
+.personalbackground { background-image: url(../images/backgrounds/reportsbackground.gif); background-repeat: no-repeat; background-position: bottom right; color: white}
+
+
+/*  IPP 'tabs' - see siw_ipp_tab.hts.  Shows IPP page links and current user text       */
+
+#IPPWelcome {
+		clear:both;
+		float:left;
+		font-size: 105%; /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+		padding:0px;
+		margin:0px 0px 10px 5px;/* top right bottom left */
+
+}
+#IPPPageTabs {
+	text-align:right;
+	font-size: 105%; /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	padding:0px;
+	margin:0px 5px 10px 5px;/* top right bottom left */
+
+}
+#IPPPageTabs a {
+	font-size: 120%; /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+
+}
+
+/* IPP Call Centre Menu Bar Styles  */
+/* classes for second level page tabs - developed for IPP call centre in v.711 */
+/* IPP call centre page tabs are form submit buttons, not hyperlinks */
+/* addition formsub.. classes for javascript rollover classes to highlight form sub buttons on mouseover */
+
+.formsubtabs2 { BORDER-RIGHT: #666666 0px solid; BORDER-TOP: #666666 0px solid; /*FONT: 70% verdana bold;*//* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */ BORDER-LEFT: #666666 0px solid;  COLOR: #333333; BORDER-BOTTOM: #666666 0px solid; BACKGROUND-COLOR: #c7bed5; cursor: hand }
+.formsubtabs2over { BORDER-RIGHT: #666666 0px solid; BORDER-TOP: #666666 0px solid; /*FONT: 70% verdana bold;*//* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */ BORDER-LEFT: #666666 0px solid;  COLOR: #FFFFFF; BORDER-BOTTOM: #666666 0px solid; BACKGROUND-COLOR: #666699; cursor: hand }
+.pagetabs2border {background-color: #666699;}
+.pagetabs2bg {background-color: #ebebeb;}
+.pagetabs2tabbg {background-color: #c7bed5;}
+.pagetabs2titlebg {background-color: #CCCCCC;}
+.pagetabs2title {
+	/*        font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+            font-size: 70%;*//* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+            color: #333333;
+			}
+/* end of IPP Call Centre Menu Bar Styles  */
+
+
+
+/* ==========================================================
+  Below here are all the new style classes for e:Vision 7.2.1
+  new web standard HTS/HTML template and accessible
+  CSS styled Portal (set on MUA, does not use tables)
+  ===========================================================  */
+/* New sits.css sections below here are -
+	1.  HTML tag styles
+	2.	Default header and footer styles
+	3.	Portal Page tab styles
+	4.	Main Page Divisions (of content between the header and footer)
+	5. 	Page Titles styles
+	6.	Portal DIV mode - container style classes
+	7.	SITS Web Standards Data tables style classes
+*/
+
+/* HTML tag redefinitions */
+/* html and body here are used to remove any
+default browser window margins - Added for SITS new web standards.
+Added here to make copying into client sits.css files easier */
+/* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+/*
+html{
+height: 100%;
+border: 0px;
+padding: 0px;
+margin: 0px;
+}
+body{
+height: 100%;
+margin: 0px;
+padding: 0px;
+border: 0px;
+}
+*/
+
+
+/* html FORM element redefinitions */
+/* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+/*
+form{
+ 	margin:0px;
+}
+
+input:not([type=button]):not([type=submit]), textarea, select{
+
+	-webkit-transition: all 0.20s ease-in-out;
+	-moz-transition: all 0.20s ease-in-out;
+	-ms-transition: all 0.20s ease-in-out;
+	-o-transition: all 0.20s ease-in-out;
+
+	font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+	font-size:100%;
+
+	border:1px solid #b3d4fc;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+
+	color:#666666;
+ 	margin:0px;
+	padding:2px;
+	}
+
+textarea[readonly], textarea[disabled]
+{
+	border:1px solid #8D8D8D;
+}
+
+input:not([type=button]):not([type=submit]):not([readonly]):not([disabled]):focus, select:focus, textarea:not([readonly]):not([disabled]):focus
+{
+	background-color:#F7F0C5;
+	box-shadow: 0 1px 0 #2392f3 inset, 0 -1px 0 #2392f3 inset, 1px 0 0 #2392f3 inset, -1px 0 0 #2392f3 inset, 0 0 4px rgba(35, 146, 243, 0.5);
+
+	}
+
+input[readonly]:not([type=button]):not([type=submit]):focus, textarea[readonly]:focus, input[disabled]:not([type=button]):not([type=submit]):focus, textarea[disabled]:focus
+{
+	border:1px solid #8D8D8D;
+	box-shadow: 0 1px 0 #8D8D8D inset, 0 -1px 0 #8D8D8D inset, 1px 0 0 #8D8D8D inset, -1px 0 0 #8D8D8D inset, 0 0 4px rgba(141,141,141, 0.5);
+}
+
+ div.chosen-container-multi ul.chosen-choices li.search-field input[type="text"]:focus
+ {
+ box-shadow:none;
+ }
+
+input.chosensearch:focus{
+ box-shadow: none;
+}
+ input.chosensearch{
+	  box-shadow: none;
+ }
+ */
+
+input.sitsmandatoryinput
+{
+	background-color:#FFDFDF;
+	border:1px solid #333333;
+}
+
+select.sitsmandatoryinput
+{
+	background-color:#FFDFDF;
+	border:1px solid #333333;
+}
+
+textarea.sitsmandatoryinput
+{
+	background-color:#FFDFDF;
+	border:1px solid #b3d4fc;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+/* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+/*
+select{
+	font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+	font-size:100%;
+
+	border:1px solid #b3d4fc;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+
+	color:#666666;
+	margin:0px;
+}
+
+submit{
+	margin:0px;
+}
+*/
+
+/**************************************************************
+ Header and Footer Styles   (used in default SITS body-start
+ and body-end HTS files -   Edit or remove if not required.
+ ***************************************************************/
+
+/* sits_page_background used with default page headers only */
+#sits_page_background {
+/* background: url(../images/body-start-imgs/evis-bluefade-rightside.jpg) no-repeat; */
+ background-color:#FFFFFF;
+background-position:top right;
+height:100%;
+}
+
+td.sitsheadercell1 {
+background:#FFFFFF
+}
+td.sitsheadercell2 {
+border-top:0px solid #08295C;
+}
+td.sitsheadercell3 {  /* used in vertical portal page tabs examples   */
+border-top:1px solid #C5CED3;background: #67747A
+}
+td.sitsheadercell4 {  /* used in vertical portal page tabs examples   */
+border-top:0px solid #08295C;border-right:0px solid #08295C;background: #fff;
+}
+#sitsheaderstrap {
+	height: 61px;
+	/*background-color: #BCBFC4;*/
+	color:#99A6AC;
+	background-color:#67747A;
+	border-bottom:5px solid #99A6AC;
+	padding:0px;
+	/*font-family: Gill Sans MT, 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, Sans-serif;*//* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+
+}
+
+#sitsheaderimage1 {
+float:left;
+width:160px;
+height:40px;
+background-color:#08295C;
+margin-top:0em;
+padding-top:0.1em;
+position:absolute;
+top:1em;
+left:1em;
+text-align:center;
+vertical-align:middle;
+border-left: 1px solid #BCBFC4;
+border-right: 1px solid #BCBFC4;
+border-top: 1px solid #BCBFC4;
+/*
+filter:alpha(opacity=60);
+opacity: 0.6;
+-moz-opacity:0.6;
+background: url() no-repeat;
+*/
+}
+
+#sitsheadermaintitle {
+position: absolute;
+top: 20px;
+right:5px;
+		margin:0px;
+		float:left;
+		font-size: 133%; /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	padding-bottom:0px;
+	padding-left:10px;
+	color:#B4BEC2;
+	display:block;
+	border-bottom:1px solid #B4BEC2;
+
+}
+#sitsheadercontrollinks {
+		position:absolute;
+		top:5px;
+		right:5px;
+	float:none;
+	text-align:right;
+	padding:0px;
+	margin:5px 5px 0px 0px;/* top right bottom left */
+	/*font-size: 70%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	color: #666;
+}
+#sitsheadercontrollinks a { font-weight:normal; COLOR: #666; TEXT-DECORATION: none ; }
+#sitsheadercontrollinks A:hover,#sitsheadercontrollinks A:active {TEXT-DECORATION: underline}
+
+#sitsloggedinmessage {
+
+		height:15px;
+		position:absolute;
+		top:2.5em;
+		right:0.5em;
+		/*font-size: 75%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+		color:#FFFFFF;
+		border-bottom:1px solid #BCBFC4;
+		line-height:1em;
+		text-align:right;
+}
+#sitsheaderdatetext {
+color: #B4BEC2;
+	text-align:right;
+	/*font-size: 70%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	padding:0px;
+	margin:0px 5px 0px 0px;/* top right bottom left */
+	}
+#sitspagefooter {
+	padding:0px;
+}
+td.sitsfootercell1 {
+	border-right:0px solid #08295C;
+ 	/*background:#fff url(../images/body-start-imgs/evis-blue-white-bot-left-corner.gif) bottom left no-repeat; */
+	}
+td.sitsfootercell2 {
+border-top:2px solid #67747A;
+border-right:0px solid #08295C;
+background:#BCBFC4;
+border-bottom: 10px solid #67747A;
+}
+p.sitstopofpage {
+	padding:5px;
+	/*font-size: 70%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	color: #ffffff;
+	}
+p.sitstopofpage a {
+	color:#ffffff;
+	}
+
+.sitsfootertext {
+text-align:right;
+	margin:0px;
+	font-size: 90%; /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	color: #fff;
+	}
+.sitsfootertext A { COLOR: #fff; TEXT-DECORATION: none ; }
+.sitsfootertext A:hover,.sitsfooter A:active { TEXT-DECORATION: underline}
+
+
+/***************************************************************/
+/*   Portal Page tab styles                                    */
+/***************************************************************/
+
+/* accessibility and CSS guidance thanks to www.alistapart.com
+										 and www.ericmeyer.com */
+
+/* 	START OF SITS DEFAULT HORIZONTAL PAGE TAB MENU BAR  */
+/*  		(uses 2 images to create tab style  */
+
+#sitspagetabs {clear:left;
+	 margin: 0; padding: 0; margin-left:15px;}
+#sitspagetabs li {list-style: none; float: left;
+  margin-left: 1px; padding-left: 16px;
+   line-height: 140%; white-space: nowrap;
+  background: #FFF url(../images/tabs/tabs740.gif) 0 100% no-repeat;}
+
+#sitspagetabs li.menutitle {
+		display:none;
+		}
+#sitspagetabs a {
+	display: block;
+	float: left;
+	padding: 0 16px 0 0;
+  font-size: 90%; /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+  text-decoration: none; font-weight: bold;
+  background: #FFF url(../images/tabs/tabs740.gif) 100% 100% no-repeat;
+  color: #333;
+  width: .1em;}
+html>body #sitspagetabs a {width: auto;}    /* fixes IE6 hack */
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#sitspagetabs a {float: none;}            /* End IE5-Mac hack */
+#sitspagetabs a:hover {color: #666;}
+#sitspagetabs li.activetab, #sitspagetabs li.activetab a, #sitspagetabs li.activetab a:hover {color: #FFF;
+  background-image: url(../images/tabs/tabs740-activetab.gif);}
+
+
+/*   END OF SITS DEFAULT HORIZONTAL PAGE TABS  */
+
+/* 	START OF SITS HORIZONTAL PAGE TAB - STYLE 2  */
+/*  		(uses 2 images to create tab style
+ - to use this style please set the page tabs <ul> in body-start-tabs
+  to id and class = sitspagetabs2  */
+
+#sitspagetabs2 {clear:left;
+	 margin: 0; padding: 0;
+	 }
+
+#sitspagetabs2 li {list-style: none; float: left; margin: 0;
+width:auto; /* use this to make page tabs stretch to any length to text */
+width: 10%;  /* use this to make page tabs all the same length */
+
+  line-height: 120%; white-space: nowrap;}
+
+#sitspagetabs2 li.menutitle {
+		display:none;
+		}
+#sitspagetabs2 a {
+	display: block; float: left; padding: 0 8px 0 20px;
+  text-decoration: none; font-weight: bold;
+  border: 1px solid;
+  border-color: #FFF #333 #333 #FFF;  /* top right bottom left */
+  background: #CCC url(../images/tabs/tabs-grain-effect.gif) 2px 50% no-repeat;
+  color: #333;
+  font-size: 90%; /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+  }
+html>body #sitspagetabs2 a {width: auto;}    /* fixes IE6 hack */
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#sitspagetabs2 a {float: none;}            /* End IE5-Mac hack */
+#sitspagetabs2 a:hover {background-color: #dedede; color: #333;
+ border-color: #333 #666 #666 #333;  /* top right bottom left */
+ }
+#sitspagetabs2 li.activetab, #sitspagetabs2 li.activetab a {
+	background-color: #08295C; color: #CCC;
+ }
+
+/*   END OF SITS  HORIZONTAL PAGE TABS - STYLE 2 */
+
+/* 	START OF SITS DEFAULT VERTICAL PAGE TAB MENU BAR   */
+/*  		(css styled lists)   */
+
+#sitspagetabs-vert {
+width: 160px;
+height:100%;
+border-left: 1px solid #BCBFC4;
+border-right: 1px solid #BCBFC4;
+	 }
+
+
+
+.sitspagetabs-vert {
+	/*border: 1px solid #08295C;*/  /* #3F264E*/
+	padding: 0 0 0 0;
+	margin-top: 0px;
+	margin-left: 1.4em;
+	margin-right: 1em;
+	/*font-family: Arial, 'Trebuchet MS', 'Lucida Grande', Verdana, Lucida, Geneva, Helvetica,
+	   sans-serif;
+	  font-size:70%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	  background-color:#8B9AA1;
+
+
+	}
+.sitspagetabs-vert ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		border: none;
+		}
+.sitspagetabs-vert li.menutitle {
+		background-color: #08295C;
+		color:#BCBFC4;
+		padding: 6px;
+		font-style:italic;
+		/* background:#BCBFC4 url(../images/tabletitle_bg_blue-white-corner.jpg) top left no-repeat; */
+		}
+.sitspagetabs-vert li.activetab {
+		background-color: #7F8E95;  /* #ebebeb  */
+		}
+.sitspagetabs-vert li.normaltab {
+		}
+.sitspagetabs-vert li {
+		list-style: none;
+		border-bottom: 1px solid #BCBFC4;
+		margin: 0;
+
+		}
+.sitspagetabs-vert li a {
+		display: block;
+		padding: 6px;
+		color: #FFFFFF;
+		text-decoration: none;
+		width: 100%;
+		}
+.sitspagetabs-vert li a:link {
+		text-decoration: none;
+		color: #FFFFFF;
+		font-weight:bold;
+		}
+.sitspagetabs-vert li a:hover {
+		background-color: #7F8E95;
+		color: #FFFFFF;
+		font-weight:bold;
+		}
+.sitspagetabs-vert li a:visited {
+		text-decoration: none;
+		color: #FFFFFF;
+		font-weight:bold;
+		}
+.sitspagetabs-vert li a:active {
+		text-decoration: none;
+		color: #BCBFC4;
+		font-weight:bold;
+		}
+
+	html>body .sitspagetabs-vert li a {
+		width: auto;
+		}
+
+
+
+#sitspagetabs-vert1{width: 140px;
+	 }
+
+
+.sitspagetabs-vert1{
+	border: 1px solid #08295C;  /* #3F264E*/
+	padding: 0 0 0 0;
+	margin-top: 10px;
+	margin-left: 10px;
+	/*font-family: Arial, Verdana, Lucida, Geneva, Helvetica,
+	   sans-serif;*/
+	  font-size:90%; /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	}
+.sitspagetabs-vert1 ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		border: none;
+		}
+.sitspagetabs-vert1 li.menutitle {
+		background-color: #08295C;
+		color:#BCBFC4;
+		padding: 6px;
+		font-style:italic;
+		}
+.sitspagetabs-vert1 li.activetab {
+		background-color: #ebebeb;  /* #ebebeb  */
+		}
+.sitspagetabs-vert1 li.normaltab {
+		}
+.sitspagetabs-vert1 li {
+		list-style: none;
+		border-bottom: 1px solid #08295C;
+		margin: 0;
+		}
+.sitspagetabs-vert1 li a {
+		display: block;
+		padding: 6px;
+		color: #08295C;
+		text-decoration: none;
+		width: 100%;
+		}
+.sitspagetabs-vert1 li a:link {
+		text-decoration: none;
+		color: #08295C;
+		font-weight:bold;
+		}
+.sitspagetabs-vert1 li a:hover {
+		background-color: #efefef;
+		color: #08295C;
+		font-weight:bold;
+		}
+.sitspagetabs-vert1 li a:visited {
+		text-decoration: none;
+		color: #08295C;
+		font-weight:bold;
+		}
+.sitspagetabs-vert1 li a:active {
+		text-decoration: none;
+		color: #08295C;
+		font-weight:bold;
+		}
+
+	html>body .sitspagetabs-vert1 li a {
+		width: auto;
+		}
+
+
+/* html>body seen above is a workaround for IE */
+/*  END OF SITS DEFAULT VERTICAL PAGE TABS   */
+
+/* START OF SITS VERTICAL PAGE TAB -STYLE 2   */
+/*  		(uses no images)   */
+
+#sitspagetabs-vert2 {
+	width: 140px;
+	border: 1px solid #90bade;
+	padding: 0 0 0.5em 0;
+	margin-bottom: 1em;
+	/*font-family: 'Trebuchet MS', 'Lucida Grande',
+	  Verdana, Lucida, Geneva, Helvetica,
+	  Arial, sans-serif;*/
+	  font-size:105%; /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	background-color: #1958b7;
+
+	}
+	#sitspagetabs-vert2 ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		border: none;
+		}
+#sitspagetabs-vert2 li.menutitle {
+
+		}
+	#sitspagetabs-vert2 li {
+		border-bottom: 1px solid #90bade;
+		margin: 0;
+
+		}
+#sitspagetabs-vert2 li a {
+		display: block;
+		padding: 5px 5px 5px 0.5em;
+		border-left: 4px solid #1958b7;
+		border-right: 4px solid #508fc4;
+		background-color: #2175bc;
+		color: #fff;
+		text-decoration: none;
+		width: 100%;
+		}
+#sitspagetabs-vert2 li a:hover {
+		border-left: 4px solid #1c64d1;
+		border-right: 4px solid #5ba3e0;
+		background-color: #2586d7;
+		color: #fff;
+		}
+
+#sitspagetabs-vert2 li.activetab a {
+		border-left: 4px solid #1c64d1;
+
+		border-right: 4px solid #5ba3e0;
+		background-color: #2586d7;
+		color: #fff;
+		}
+
+html>body #sitspagetabs-vert2 li a {
+		width: auto;
+		}
+
+/*  END OF SITS VERTICAL PAGE TABS STYLE 2   */
+
+
+/***************************************************************/
+/* Main Page Divisions      				       */
+/***************************************************************/
+
+/* Please Note: the default headers and footers supplied with
+e:Vision, IPP use a single 100% height 'shell' table which is opened in
+the header files and closed in the footer files.  This is to place the footer
+always at the bottom of the window, or content, whichever is longer.
+
+sitsportalcontent and sitspagecontent are the main page content wrapper DIVs
+ and are opened in the default body-start HTS files and closed in the body-end HTS files  */
+
+/* position overall main page content while logged in
+ie with the page tabs menu bar in view , used in body-start-tabs.hts */
+#sitsportalcontent {
+	clear:both; /* required for default SITS header alignment */
+	margin:15px 10px 5px 10px;  /* top right bottom left */
+	width:95%;
+
+
+
+}
+/* NB - width:95% above is a compromise between IE and the CSS compliant browser
+ - the page does not appear exactly centred in IE but will break in IE
+  if no width stated, and will break in other browsers if width:100% */
+
+/* these "portal" sections control portal pages
+where containers are displayed.  This allows a different design
+on container pages if required */
+
+#sitsportalpagetitlesection{
+	margin-left:5px;
+		padding-top:10px;
+}
+
+#sitsportalpagetitle {
+}
+
+h1.sitsportalpagetitle {
+	/*
+	font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+	font-size: 70%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	color: #08295C;
+	font-weight: bold;
+	border-bottom:1px solid #08295C;
+	margin:0px;
+
+}
+
+#sitsportalpagedesc {
+}
+
+p.sitsportalpagedesc {
+	/*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;*/
+	font-size:85%; /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	color: #666666;
+	margin-left:0px;
+	margin-top:5px;
+	margin-bottom:15px;
+	text-align:justify;
+}
+
+/* main wrapper DIV for rest of portal container page following the title section */
+#sitsportalcontainersection {
+}
+
+#sitsportalhelp {
+}
+
+p.sitsportalhelp {
+	/*
+	font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+	font-size:75%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	color: #666666;
+	text-align:justify;
+}
+
+#sitspagetitlesection {
+}
+
+#sitspagetitle {
+}
+
+h1.sitspagetitle {
+	/*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;*/
+	font-size: 105%; /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	color: #08295C;
+	font-weight: bold;
+	border-bottom:1px solid #08295C;
+}
+
+#sitspagedesc {
+}
+
+p.sitspagedesc {
+	/*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+	font-size:70%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	color: #666666;
+	text-align:justify;
+}
+
+/***************************************************************/
+/* Non-Portal Page Styles							    0xxxDD */
+/*                  										   */
+/*  these page sections control all pages except where portal  */
+/*  containers are displayed.  For example HTS program screens,*/
+/*  message screens, the standard login screen, web SRLs etc.  */
+/*  This allows a different design from portal container pages */
+/*  if desired. Position these sections here if required       */
+/***************************************************************/
+
+/* position overall main page content when no page tabs are on display
+ie used is body-start.hts and body-start-ipp.hts  */
+#sitspagecontent {
+ 	clear:both; /* required for default SITS header alignment */
+	margin:15px 15px 5px 15px;  /* top right bottom left */
+	width:95%;
+
+	/*background:#ffffff url(../images/tabs/grey-round-left.gif) top left no-repeat;*/
+
+
+}
+
+/* main wrapper DIV for rest of page following the title section */
+#sitspagedatasection {
+ }
+
+/* sits page help is placed at the end of the page - text is normally
+ held in boilerplate BP003. Reposition using CSS here if required */
+
+#sitspagehelp {
+ }
+
+p.sitspagehelp {
+	/*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+	font-size:75%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	color: #666666;
+	text-align:justify;
+}
+
+
+/***************************************************************/
+/* Portal TABLE Mode Styles						    	0xxxEE */
+/*															   */
+/* style classes used on portal page to add style to 		   */
+/* containers and links within a container 					   */
+/***************************************************************/
+
+/* portaldesc - controls container description with portal in TABLE mode */
+.portaldesc {  padding:4px;
+  	background-color:#FFFFFF;
+  	color:#666699;
+  	/*font: normal 70% Verdana ;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+}
+
+/* portalcontitle - controls container title with portal in TABLE mode */
+.portalcontitle {
+	/*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+	font-size: 75%;*/
+	color: #fff;
+	font-weight: bold
+}
+
+/* H3 output next to portalcontitle for accessibility  - margin settings required to remove H3 default spacing */
+/* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+/*
+H3 {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 100%;
+	FONT-FAMILY: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+	line-height:1%;
+	margin: 7px;
+}
+*/
+
+/* portallink - controls container link (COP) style with portal in TABLE mode */
+.portallink {
+	/*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	padding:4px;
+	background-color:#F8F8F8;
+  	color:#333333;
+ 	font-size:133%; /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	border-top:1px dashed #CCC;
+}
+.portallink a:link {
+	/*font-size: 75%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	text-decoration: none;
+	color: #666;
+}
+
+.portallink a:visited {
+	/*font-size: 75%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	text-decoration: none;
+	color: #666;
+}
+
+.portallink a:hover {
+	/*font-size: 75%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	text-decoration: underline;
+	color: #666;
+	background-color: #ebebeb;
+}
+
+.portallink a:active {
+	/*font-size: 75%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	text-decoration: underline;
+	color: #666;
+	background-color: #cccccc;
+}
+
+
+/***************************************************************/
+/* Portal DIV Mode Styles							    0xxxFF */
+/*															   */
+/*  Portal Containers and Container Options can be styled 	   */
+/*  using the classes specified here.    					   */
+/***************************************************************/
+
+/* this is the layout table used to hold the portal columns
+ - required over pure CSS layout due to requirement for any HTML
+ content to be workable within any container */
+#sitsportaltable {
+}
+
+
+/* these are wrapper DIVs for the portal columns.  Only used in
+Portal DIV mode these are placed inside the respective
+portal column layout table table cell   */
+	/* if columns here are set with no width, or to 100%
+ there will be display problem on single column pages in IE */
+.sitscolumn1 {
+width:97%;
+}
+
+.sitscolumn2 {
+width:97%;
+}
+
+.sitscolumn3 {
+width:97%;
+}
+
+
+/*  Standard Class used for every Portal Container   (in DIV mode)
+  - Use the margins here to set the distance between/around each container */
+.sitscontainer {
+
+margin:0px 0px 15px 0px;  /* top right bottom left */
+float:none;
+width:100%;
+
+
+}
+
+.sitscop {
+}
+
+.sitscontitlesection {
+	width:100%;
+    /*border: 1px solid #BCBFC4;*/
+	border-bottom: none;
+    /*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+    color: #FFFFFF;
+	margin-bottom: 0px; /* used if image not available */
+}
+
+p.sitscontitleicon {
+            float:left;
+            margin:0px;
+            padding:0px;
+}
+.sitsconupdatedicon {
+            float:none;
+
+            margin:0px;
+            padding:3px;
+}
+
+.sitscontitle  {
+            font-size:105%; /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+            font-weight: bold;
+            margin:1px;
+			margin-left:8px;
+            padding:1px;
+
+            float:left;
+}
+
+.sitsconrightimage  {
+			padding:0px;
+			margin:0px;
+            float:none;
+
+}
+
+.sitsconborder {
+	border-left: 1px solid #BCBFC4;
+	border-right: 1px solid #BCBFC4;
+	border-bottom: 1px solid #BCBFC4;
+	margin:0px;padding:0px;
+	background-color:#C5D9BD;
+}
+
+p.sitscontrols {
+ 	/*font-size: 70%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */ /* percentage of the size specifiied above */
+	width:100%;
+	color: #666;
+	font-weight: normal;
+	margin-top:0px;
+	/*padding-top:0px;*/
+	margin-bottom:0px;
+	/*padding-bottom:0px;*/
+	padding:1px;
+	text-align:right;
+	border-top:none;
+	border-left: 1px solid #BCBFC4;
+	border-right: 1px solid #BCBFC4;
+	background-image: url(../images/tabledesc_bg.gif);
+    background-color: #F1EFE2;
+
+
+
+}
+.sitscontrolimage {
+float:right;
+padding:1px;
+}
+
+.sitsconhelp {
+	/*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;*/
+	font-size:85%; /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	color:  #666;
+	margin-top:0px;
+	padding-top:0px;
+	margin-bottom:0px;
+	padding-bottom:0px;
+	border: 1px solid #BCBFC4;
+    background-color: #F1EFE2;
+}
+
+
+.sitscophelp {
+	/*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;*/
+	font-size:85%; /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	color:  #666; ;
+	margin-top:0px;
+	padding-top:0px;
+	margin-bottom:0px;
+	padding-bottom:0px;
+    background-color: #F1EFE2;
+}
+
+.sitscontrols A{
+
+	COLOR: #666;
+	TEXT-DECORATION: underline;
+}
+
+.sitscondescription {
+	/*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;*/
+	font-size:85%; /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	color:  #666;
+	padding:3px;
+	margin-top:0px;
+	/*padding-top:0px;*/
+	margin-bottom:0px;
+	/*padding-bottom:0px;*/
+	background-image: url(../images/tabledesc_bg.gif);
+    	background-color: #F1EFE2;
+	border-top:1px solid #CCC;
+	border-left: 1px solid #BCBFC4;
+	border-right: 1px solid #BCBFC4;
+}
+
+.sitscopsection {
+            margin-bottom:0px;  /* spacing after message box */
+			margin-top:0px;
+			padding:0px;
+            border: 1px solid #BCBFC4;
+			width:100%;
+            background-color:#F4F4F4;
+
+
+}
+
+
+p.sitscopicon {
+            float:left;
+            margin:0px;
+            padding:1px;
+	    list-style-type: none;
+	    font-size:90%; /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+}
+
+.sitsnewcontext {
+
+            margin:0px;
+            padding:1px;
+	    color:#FFFFFF;
+  	    list-style-type: none;
+	    font-size:75%;
+}
+.sitsnewcoptext {
+
+            margin:0px;
+            padding:3px;
+			color:#003399;
+	    /*font-size:75%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+}
+
+ul.sitscop {
+            /*font-size:75%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+            margin:3px;
+			margin-left:20px;
+            padding:3px;
+            margin-bottom:6px;
+			list-style-type: none;
+			clear:left;
+}
+.li {
+			 padding:3px;
+			 margin-bottom:6px;
+			}
+
+p.sitscop {
+            /*font-size:75%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+            margin:3px;
+			margin-left:20px;
+            padding:3px;
+            margin-bottom:6px;
+
+}
+
+/******************************************************/
+/* Message box definitions                            */
+/******************************************************/
+#sitsmessagebox {
+margin:20px;
+
+}
+.sitsmessagetitlesection
+
+{           width:95%;
+            border: 1px solid #BCBFC4;
+            /*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+            color: #FFFFFF;
+            background-color: #BCBFC4; /* used if image not available */
+}
+
+p.sitsmessagetitleicon {
+            float:left;
+            margin:0px;
+            padding:3px;
+}
+
+h2.sitsmessagetitle  {
+            /*font-size:75%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+            font-weight: bold;
+            margin:3px;
+            padding:3px;
+            float:left;
+}
+
+p.sitsmessagecode {
+            font-size:90%; /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+            font-weight:bold;
+            text-transform:capitalize;
+            margin:3px;
+            padding:3px;
+            text-align:right;
+}
+
+.sitsmessagecontentsection {
+            margin-bottom:20px;  /* spacing after message box */
+            border: 1px solid #BCBFC4;
+            width:95%;
+            background-color: #FFFFFF;
+            margin-bottom:20px;
+}
+
+p.sitsmessagecontenticon {
+            float:left;
+            margin:0px;
+            padding:3px;
+}
+
+p.sitsmessagecontent {
+            /*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+            font-size:75%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+            margin:3px;
+            padding:3px;
+            margin-bottom:6px;
+}
+
+
+/* Data Table Styles */
+
+/***************************************************************/
+/* OVERALL DATA TABLE WIDTH		                       */
+/***************************************************************/
+
+.sitstablegrid,
+.sitstablevertical,
+.sitstablehorizontal,
+.sitstableoutline {
+	width:100%; /* overall default table width */
+	margin-bottom:20px; /* separator space below each table */
+}
+
+
+/***************************************************************/
+/* TABLE TITLES:   caption (table title) definitions - general */
+/***************************************************************/
+
+
+.sitstablegrid caption,
+.sitstablevertical caption,
+.sitstablehorizontal caption,
+.sitstableoutline caption
+{
+	/*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+	font-size:75%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	color: #FFFFFF;
+	padding:6px;
+	font-weight: bold;
+	text-align: left;
+	background-color:#08295C;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	/* background:#BCBFC4 url(../images/tabletitle_bg_blue-white-corner.jpg) top left no-repeat;*/
+
+    -o-box-shadow:
+        inset 0 1px 1px rgba(255,255,255,0.3),
+        inset 0 8px 8px rgba(255,255,255,0.2),
+        inset 0 10px 20px rgba(255,255,255,0.25),
+        inset 0 -15px 30px rgba(0,0,0,0.3);
+
+    -webkit-box-shadow:
+        inset 0 1px 1px rgba(255,255,255,0.3),
+        inset 0 8px 8px rgba(255,255,255,0.2),
+        inset 0 10px 20px rgba(255,255,255,0.25),
+        inset 0 -15px 30px rgba(0,0,0,0.3);
+
+    -moz-box-shadow:
+        inset 0 1px 1px rgba(255,255,255,0.3),
+        inset 0 8px 8px rgba(255,255,255,0.2),
+        inset 0 10px 20px rgba(255,255,255,0.25),
+        inset 0 -15px 30px rgba(0,0,0,0.3);
+
+	box-shadow:
+        inset 0 1px 1px rgba(255,255,255,0.3),
+        inset 0 8px 8px rgba(255,255,255,0.2),
+        inset 0 10px 20px rgba(255,255,255,0.25),
+        inset 0 -15px 30px rgba(0,0,0,0.3);
+
+*/
+	}
+
+
+/***************************************************************/
+/* TABLE DESCRIPTIONS: SITS table descriptive text style       */
+/***************************************************************/
+
+.sitstabledescriptioncell {
+	/*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+
+	background-image: url(../images/tabledesc_bg.gif);
+        background-color: #F1EFE2;
+}
+
+.sitstabledescriptioncell P {
+	margin-bottom:0px;
+}
+
+P.sitstabledescription
+{
+	color: #333333;
+	font-weight: normal;
+	/*font-size: 95%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	text-align: left;
+}
+
+
+P.sitsrecordcount {
+	/*font-size: 90%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */ /* percentage of the size specified above */
+	color: #666;
+	font-weight: normal;
+	margin-top:4px;
+	padding-top:4px;
+	float:left;
+}
+
+P.sitsrecordpaging {
+	/*font-size: 90%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */ /* percentage of the size specified above */
+	color: #666;
+	font-weight: normal;
+	margin-top:4px;
+	padding-top:4px;
+	text-align:right;
+	border-top:1px dashed #ccc;
+}
+
+/***************************************************************/
+/* GENERIC TABLE CELL DEFINITIONS: font size, padding          */
+/***************************************************************/
+
+
+.sitstablegrid caption,
+.sitstablegrid th,
+.sitstablegrid td,
+.sitstablevertical caption,
+.sitstablevertical th,
+.sitstablevertical td,
+.sitstablehorizontal caption,
+.sitstablehorizontal th,
+.sitstablehorizontal td,
+.sitstableoutline caption,
+.sitstableoutline th,
+.sitstableoutline td {
+	/*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+	font-size:75%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	padding: 4px;
+	vertical-align:top;
+}
+
+/* remove padding where required e.g. if form submit button in cell */
+td.sitsnopadding {
+ padding:0px;
+ margin:0px;
+}
+
+
+/***************************************************************/
+/* TABLE ROW AND COLUMN HEADINGS                               */
+/***************************************************************/
+
+.sitstablegrid th,
+.sitstablevertical th,
+.sitstablehorizontal th,
+.sitstableoutline th {
+	background-color:#ebebeb;
+	padding-right: 5px; /* required to keep right aligned TH row headings from edge of cell */
+	color:#666666;
+}
+
+/* alignment of all row and column headings - overrides default centering of TH tag*/
+
+.sitsrowhead {
+	text-align: right;
+	}
+.sitscolhead {
+	text-align: left;
+	}
+
+
+/***************************************************************/
+/* TABLE BORDERS AND BACKGROUND COLOURS                        */
+/***************************************************************/
+
+.sitstablegrid,
+.sitstablevertical,
+.sitstablehorizontal,
+.sitstableoutline {
+	background-color: #FFFFFF; /* background shade applied to all cells */
+	border: 1px solid #cccccc; /* table outline box */
+	border-collapse: collapse;
+}
+
+
+.sitsrowhighlight {
+	background-color: #F0F0F0; /* #F8F8F8 background shade applied to alternate TRs */
+}
+
+.sitstabledescriptioncell
+{
+	border-bottom: 1px solid #cccccc;
+}
+
+
+/* specific table gridline definitions */
+/* set generic table grid line widths and colours here  - normally all three set to same width and colour */
+
+.sitstablegrid th,
+.sitstablegrid td {
+	border: 1px solid #08295C; /* draws grid lines for sitstablegrid style class */
+	}
+
+.sitstablevertical th,
+.sitstablevertical td {
+	border-right: 1px solid #BCBFC4;  /* draws vertical lines for sitstablevertical style class */
+	}
+
+.sitstablehorizontal th,
+.sitstablehorizontal td,
+.sitstablecontent {
+	border-top: 1px solid #BCBFC4;  /* draws horizontal lines for sitstablehorizontal style class */
+	}
+
+
+/* ==========================================================  */
+/* stlyes used normally by SITS standard letters SRLs          */
+/* ==========================================================  */
+
+/* please note, SRLs should use the normal SITS html template
+  and make use of the standard page layout, title and data sections
+ - addional paragraph text formatting -   */
+
+p.sitstext {
+	/*font-size: 75%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	color: #333333;
+	font-weight: normal;
+	text-align: left;
+}
+
+
+/***************************************************************/
+/* NESTED TABLE                                                */
+/***************************************************************/
+
+.sitstablenesteddata {
+
+	border: 1px solid #ccc; /* table outline box */
+	border-collapse: collapse;
+	width:100%;
+	margin-bottom:0px;
+
+}
+.sitstablenesteddata caption
+{
+	font-weight: bold;
+	background-color: #cccccc;
+	background-image:none; /* req. so that previous caption bg image not still used */
+	color:#666666;
+}
+
+.sitstablenesteddata caption,
+.sitstablenesteddata th,
+.sitstablenesteddata td {
+	/*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+	font-size:100%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	color:#333;
+	vertical-align:top;
+}
+
+.sitstablenesteddata th {
+	background-color:#dbdbdb;
+	color:#666;
+	padding-right: 5px; /* required to keep right aligned TH row headings from edge of cell */
+}
+.sitstablenesteddata td,
+.sitstablenesteddata th {
+	border: 1px solid #ccc; /* draws grid lines for sitstablegrid style class */
+	}
+
+/***************************************************************/
+/* Print or Screen Only classes - used with sits-print.css  */
+/***************************************************************/
+/* to use simply add a DIV tag with screen or print only class
+ as required to show/hide DIV while viewing on screen or printing
+  - Note - these styles should not be edited */
+.sitsscreenonly {}
+.sitsprintonly {display:none;}
+/* hidden style (for accessibility) used when additional */
+/* hidden labels or links are required */
+.sitshidden {display:none;}
+
+/***************************************************************/
+/* Forum Styles      -added by IREL1                           */
+/***************************************************************/
+
+.forumlink {WORD-SPACING: 0px}
+.forumlink A:link { COLOR: #77628B; TEXT-DECORATION: none ; font-weight: bold}
+.forumlink A:visited {COLOR: #77628B; TEXT-DECORATION: none ; font-weight: bold}
+.forumlink A:hover {COLOR: #9A86A9; TEXT-DECORATION: underline}
+.forumlink A:active {	COLOR: #9A86A9; TEXT-DECORATION: underline}
+
+.forumindexlink {WORD-SPACING: 0px ; /*font-size:75%*//* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */}
+.forumindexlink A:link { COLOR: #77628B; TEXT-DECORATION: none ; font-weight: bold}
+.forumindexlink A:visited {COLOR: #77628B; TEXT-DECORATION: none ; font-weight: bold }
+.forumindexlink A:hover {COLOR: #9A86A9; TEXT-DECORATION: underline }
+.forumindexlink A:active {COLOR: #9A86A9; TEXT-DECORATION: underline}
+.forumpoll { text-align: center; /*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;*//* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */ font-weight: bold ; color: #77628B; background-color: #E6E2EF}
+.forumquote { /*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;*//* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */ float:none; /*font-size: 110%;*/ color: #77628B; background-color: #EFEBEF; border: 1px solid #9A86A9;width:90%;text-align:left;padding:4px;margin-bottom:4px;margin-top:4px;filter:progid:DXImageTransform.Microsoft.dropshadow(color=9c86ad,direction=135) }
+
+.forumspacer  { font-weight: bold; color: #9A86A9; background-color: #9A86A9}
+.forummoderation { /*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;*//* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */ font-weight: bold; /*font-size: 110%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */ color: #77628B; background-color: #FFDDDD}
+.forumdeleted    { /*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;*//* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */ font-weight: bold; /*font-size: 110%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */ color: #77628B; background-color: #FFDDDD}
+
+/***********************************************************************/
+/* AJAX Styles  -added by LEWR1 - -added by LEWR1   for v7.4.0  */
+/***********************************************************************/
+
+ul.sortable li {
+	position: relative;
+}
+
+ul.boxy {
+	list-style-type: none;
+	padding: 4px 4px 0px 4px;
+	margin: 0px;
+	/*font-size: 13px;
+	font-family: Arial, sans-serif;*//* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+        border: 1px solid #ccc;
+        width: 200px;
+        float: left;
+}
+
+ul.boxy li {
+	cursor:move;
+	margin-bottom: 4px;
+        border: 1px solid #ccc;
+}
+
+
+.tabletitleajax {
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap;
+}
+
+
+.bginsideajax {
+	table-layout:fixed;
+}
+
+.unassigned {
+	border: 1px dashed #000;
+}
+
+.pageassigned {
+	border: 1px solid #000;
+}
+
+
+
+/***************************************************************/
+/* NESTED TABLE - OUTLINE ONLY - added by REED1 for 7.4.1      */
+/***************************************************************/
+.sitstablenestedoutline {
+	background-color: #efefef; /* background shade applied to all cells */
+	border: 1px solid #ccc; /* table outline box */
+	border-collapse: collapse;
+	width:100%;
+	margin-bottom:0px;
+
+}
+.sitstablenestedoutline caption
+{
+	font-weight: bold;
+	background-color: #cccccc;
+	background-image:none; /* req. so that previous caption bg image not still used */
+	/*font-size: 100%;*//* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	color:#666666;
+}
+
+.sitstablenestedoutline caption,
+.sitstablenestedoutline th,
+.sitstablenestedoutline td {
+	/*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+	font-size:100%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	color:#333;
+	vertical-align:top;
+}
+
+.sitstablenestedoutline th {
+	background-color:#dbdbdb;
+	color:#666;
+	padding-right: 5px; /* required to keep right aligned TH row headings from edge of cell */
+}
+
+/***************************************************/
+/* CAPTCHA Styles  -added by LEWR1   for v8.1.0    */
+/***************************************************/
+
+.captcha_div,.captcha_sel {
+	border:solid 1px;
+	text-align:center;
+}
+.captcha_sel {
+ 	background-color:red;
+}
+.captcha_img {
+	margin:5px;
+	width:100px;
+	height:100px;
+}
+
+/***********************************************************************/
+/* Additional AJAX Style   -added by LEWR1   for v8.1.0                */
+/***********************************************************************/
+
+ul.boxy input {
+	cursor:default;
+}
+
+/***********************************************************************/
+/* Progress bar   -added by LEWR1   for v8.1.1                         */
+/***********************************************************************/
+
+#bar_mess {
+	color : black ;
+    	/*font-family : Verdana, "Sans serif" ;
+ 	font-size : 12pt ;
+        font-weight : normal ;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	text-align : center ;
+        position : absolute;
+        width : 300px;
+        border : 2px solid black;
+        background-color : white;
+        visibility : hidden;
+}
+
+
+
+/***********************************************************************/
+/* WYSIWYG   -added by LEWR1   for v8.2.0                              */
+/***********************************************************************/
+
+.wys_error, .wys_error a:link, .wys_error a:visited, .wys_error a:hover {
+ 	color : red !important ;
+ 	background-color : #FF9999 !important ;
+}
+
+.wys_info {
+ 	color : black !important ;
+ 	background-color : #9FCFFF !important ;
+}
+
+.srl_email_fld {
+ 	/*font-size : 70% ;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+ 	width : 100% ;
+ 	margin-top : 3px ;
+}
+
+.srl_mark {
+	background-color : #FFFFFF ;
+	color : #000000 ;
+  	float : left ;
+  	border : 1px solid #000000 ;
+  	margin : 1px ;
+  	padding : 2px ;
+  	font-size : 60% ;
+  	cursor : move ;
+}
+
+.srl_mark_txt, .srl_mark_fld, .srl_mark_lst, .srl_mark_sel {
+	border : 1px dashed #000000 ;
+	float : left ;
+	padding-left : 1px ;
+	padding-right : 1px ;
+	cursor : default ;
+}
+
+.srl_expd_fld, .srl_expd_lst, .srl_expd_sel {
+	border : 1px dashed #000000 ;
+	float : left ;
+	background-color : #FFFFFF ;
+	color : #000000 ;
+	/*font-size : 70% ;*//* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	padding-left : 1px ;
+}
+
+.srl_mark_txt {
+	border : none ;
+	padding-top : 1px ;
+	padding-bottom : 1px ;
+	padding-right : 0px ;
+}
+
+.dmx_link {
+	text-align:center;
+	width:100%;
+	color : #000000 ;
+	/*font-size : 70% ;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+}
+
+.dmx_zone {
+	border : 2px dashed red ;
+	margin : 2px ;
+}
+
+.fld_textarea, .fld_password, .fld_dropdown, .fld_checkbox, .fld_radiogroup, .fld_textbox {
+  	background-color : #FFFFFF ;
+	color : #000000 ;
+  	float : left ;
+  	border : 1px solid black ;
+  	margin : 1px ;
+  	padding : 2px ;
+  	font-size : 85% ; /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+  	cursor : move ;
+}
+
+.fld_textarea {
+	background : buttonface url(../images/txt.png) no-repeat right;
+	padding-right : 19px ;
+}
+
+.fld_dropdown {
+	background : buttonface url(../images/drp.png) no-repeat right;
+	padding-right : 19px ;
+}
+
+.fld_checkbox {
+	background-color : transparent !important ;
+	background : buttonface url(../images/chk.png) no-repeat left;
+	padding-left : 17px ;
+}
+
+.fld_radiogroup {
+	background-color : transparent !important ;
+	background : buttonface url(../images/rad.png) no-repeat left;
+	padding-left : 17px ;
+}
+
+.dmx_menu_table {
+	cellspacing : 1px ;
+	cellpadding : 0px ;
+	background-color : #EFEFEF ;
+	border : 2px outset #BFBFBF ;
+}
+
+.dmx_menu, .dmx_menu_hover {
+	background-color : #EFEFEF ;
+	color : #000000 ;
+	width : 100% ;
+	height : 16px ;
+	padding-left : 25px;
+	font-size : 85% ; /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	cursor : pointer ;
+}
+
+.dmx_menu_hover {
+	background-color : #BFBFBF ;
+}
+
+.dmx_butt_style {
+	min-width : 100px ;
+	width : auto !important ;
+	width : 100px;
+}
+
+#srl_message, #dmx_message {
+	display : none ;
+	width : 100% ;
+}
+
+#srl_toolbar, #dmx_toolbar, #dmx_results, #dmx_helpbox {
+ 	background-color : #E7E6DC ;
+	border : 1px solid black ;
+}
+
+#dmx_helpbox, #srl_textbox {
+ 	/*font-size : 70% ;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+ 	color : black ;
+}
+
+#srl_textbox {
+ 	border : 1px solid black ;
+ 	width : 100% ;
+ 	height : 400px ;
+}
+
+div.btns {
+	zoom:1;
+	white-space:nowrap;
+	display:inline-block;
+}
+
+div.btns:after {
+	display:inline;
+	clear:both;
+	content:'';
+}
+
+div.btns a.btn {
+	float:left;
+	background:buttonface url(../images/border-2.gif) no-repeat;
+	cursor:pointer;
+	font-size:0;
+	text-align:center;
+	display:inline;
+	text-decoration:none;
+	margin:3px 2px;
+}
+
+div.btns a.btn:hover span {
+	opacity:0.6;
+	filter:alpha(opacity='60');
+}
+
+div.btns a.btn span {
+	padding:3px 8px 4px 8px;
+	text-align:center;
+	position:relative;
+	left:1px;
+	top:1px;
+	display:inline-block;
+	text-decoration:none;
+	background:url(../images/border.gif) right bottom no-repeat;
+	/*font:small/1 Verdana;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	color:#222;
+}
+
+div.btns a.btn span.nobtn {
+	opacity:0.6;
+	filter:alpha(opacity='60');
+	cursor:default;
+}
+
+
+/***********************************************************************/
+/* Parent-Child Menus   -added by PARD2 (DEV by LEWR1)   for v8.1.1    */
+/***********************************************************************/
+
+/* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+/*
+dl, dt, dd, ul, li {
+margin: 0;
+padding: 0;
+list-style-type: none;
+z-index:5;
+}
+*/
+#menu {
+position: absolute;
+top: 4em;
+left: 1em;
+width: 10em;
+	/*font-family: Arial, 'Trebuchet MS', 'Lucida Grande', Verdana, Lucida, Geneva, Helvetica,
+	   sans-serif;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+}
+
+#menu dt {
+cursor: pointer;
+background: #8B9AA1;
+height: 25px;
+line-height: 25px;
+margin: 0;
+border: 1px solid #BCBFC4;
+text-align: left;
+font-weight: bold;
+/*font-size:70%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+text-indent:1em;
+}
+
+#menu dt a:hover{
+background-color: #7F8E95;
+color: #FFFFFF;
+font-weight:bold;
+}
+
+#menu dd {
+position: absolute;
+z-index: 100;
+left: 8em;
+margin-top: -1.4em;
+width: 10em;
+background: #A9BFCB;
+border: 1px solid grey;
+/*font-size:70%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+}
+
+#menu dd a:hover{
+background-color: #7F8E95;
+color: #FFFFFF;
+font-weight:bold;
+}
+
+#menu ul {
+padding: 2px;
+}
+#menu li {
+text-align: center;
+font-size: 110%; /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+height: 18px;
+line-height: 18px;
+}
+#menu li a, #menu dt a {
+color: #FFF;
+text-decoration: none;
+display: block;
+font-weight:bold;
+}
+
+#menu li a:hover {
+text-decoration: none;
+
+}
+
+.catoption {
+float: left;
+padding-right: 10px;
+}
+
+/***********************************************************************/
+/* Progress bar   -added by IREL1   for v8.2.0                         */
+/***********************************************************************/
+
+.tte_details {
+	color : black ;
+    	/*font-family : Verdana, "Sans serif" ;
+ 	font-size : 12pt ;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+        font-weight : normal ;
+	text-align : center ;
+        position : absolute;
+        width : 300px;
+        border : 2px solid black;
+        background-color : white;
+        visibility : hidden;
+}
+
+/*****************************************************************************/
+/* Attribute timetable (SIW_XTTB3) HEPD1 PPL 12439 Feb 09 for V8.2.1         */
+/* Styles for the screen                                                     */
+/* These should be altered with caution is it could break the timetable view */
+/*****************************************************************************/
+
+/*styles for each box at the top of the timetable*/
+.timetableItem {
+  border: 1px solid;
+}
+
+.timetableItem h3 {
+	color: #FFFFFF;
+	margin: 0 -0.1em 0em -0.1em;
+  padding: 1em 0.5em;
+	font-weight: bold;
+	text-align: left;
+	background-color:#08295C;
+}
+
+.timetableItem .itemContent {
+  overflow: auto;
+  background-color:#fff;
+}
+
+/*Specific styles for each item at the top of the timetable*/
+
+/*Calendar styles*/
+#calendar {
+  height: 18em;
+}
+/* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+/*
+#calendar table{
+  font-size:100%;
+}
+*/
+
+#calendar h3 {
+  display: none;
+}
+
+#calendarContent {
+  width: auto;
+  text-align: center;
+}
+
+#calendarContent img {
+  border: 0px;
+}
+#calendarContent p{
+  margin: 0;
+  padding: 0;
+}
+#calendarContent .fromWeek {
+  background: #FF9;
+  font-weight: bold;
+}
+
+/*ColourKey styles*/
+#colourKeyContent {
+  height: 10em;
+}
+
+#colourKey li {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin: 0.2em;
+  padding: 0.2em;
+}
+
+/*processOptions styles*/
+#processOptionsContent {
+  text-align: center;
+  height: 10em;
+}
+#processOptionsContent dl, #processOptionsContent ul {
+  text-align: left;
+}
+#processOptionsContent dl, #processOptionsContent li {
+  border: 1px solid;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin: 0.2em;
+  padding: 0.2em;
+}
+#processOptionsContent ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+#processOptionsContent label {
+  display: none;
+}
+#processOptionsContent input, #processOptionsContent select {
+  margin: 0.2em;
+}
+
+/*message box styles*/
+#messages {
+}
+#messagesContent {
+  height: 8em;
+  margin: 0 0.2em;
+}
+
+
+/*Unscheduled record styles*/
+#unSched {
+  position: absolute; /*Do not alter*/
+  overflow: hidden; /*Do not alter*/
+  border-width: 0px 1px 1px 1px; /*Do not alter*/
+  border-style: solid;
+  border-color: #BCBFC4;
+  background-color: #dbdbdb;
+}
+#unSched .ttHead {
+  background-color: #dbdbdb !important;
+}
+#unSchedContent {
+  position: absolute; /*Do not alter*/
+  border-width: 0px 1px 1px 0px; /*Do not alter*/
+  border-style: solid;
+  border-color: #BCBFC4;
+  background-color: #efefef;
+}
+.unSchedEvent {
+  position: absolute; /*Do not alter*/
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+#timetableContent img {
+  padding-right: 2px;
+}
+
+#timetableContent .ttColHead {
+  position: absolute; /*Do not alter*/
+  overflow: hidden; /*Do not alter*/
+  border-width: 1px 1px 1px 0px; /*Do not alter*/
+  border-style: solid;
+  border-color: #BCBFC4;
+  background-color: #dbdbdb;
+  z-index: 180; /*Do not alter*/
+}
+
+#ttColHead1 {
+  border-width: 1px !important; /*Do not alter*/
+  border-style: solid !important;
+  border-color: #BCBFC4 !important;
+}
+
+#timetableContent .ttRowHead {
+  position: absolute; /*Do not alter*/
+  overflow: hidden; /*Do not alter*/
+  border-width: 0px 1px 1px 1px; /*Do not alter*/
+  border-style: solid;
+  border-color: #BCBFC4;
+  background-color: #dbdbdb;
+  z-index: 180; /*Do not alter*/
+}
+
+#timetableContent .ttSelectedRowHead {
+  position: absolute; /*Do not alter*/
+  overflow: hidden; /*Do not alter*/
+  border-width: 0px 1px 1px 1px; /*Do not alter*/
+  border-style: solid;
+  border-color: #BCBFC4;
+  background-color: red;
+  z-index: 200; /*Do not alter*/
+}
+
+#timetableContent .ttHead {
+  height: 100%; /*Do not alter*/
+  margin: 0 3px 0 0;
+  padding: 2px 0 2px 3px;
+  background-color:#dbdbdb;
+  font-weight: bold;
+	color:#666;
+}
+
+#timetableContent .ttRowCell {
+  position: absolute; /*Do not alter*/
+}
+
+#timetableContent .ttCell {
+  position: absolute; /*Do not alter*/
+  border-bottom: 1px solid #BCBFC4; /*Do not alter border width*/
+  z-index: 100; /*Do not alter*/
+}
+
+#timetableContent .ttSelectedCell {
+  position: absolute; /*Do not alter*/
+  border-bottom: 1px solid #BCBFC4; /*Do not alter border width*/
+  background-color:#FFFFFF;
+  z-index: 140; /*Do not alter*/
+}
+
+#timetableContent .ttDashedBorder {
+  border-right: 1px dashed #BCBFC4; /*Do not alter border width*/
+}
+
+#timetableContent .ttSolidBorder {
+  border-right: 1px solid #BCBFC4; /*Do not alter border width*/
+}
+
+#timetableContent .ttFooter {
+  position: absolute; /*Do not alter*/
+  height: 1px; /*Do not alter*/
+  font-size:1px; /*Do not alter*/
+  z-index:-1; /*Do not alter*/
+}
+
+#findTimeHolder .fullSlot {
+  position: absolute; /*Do not alter*/
+  background-color: #808080;
+}
+
+#findTimeHolder .freeSlot {
+  position: absolute; /*Do not alter*/
+}
+
+#findTimeHolder .acceptableSlot {
+  position: absolute; /*Do not alter*/
+  background-color: #C0C0C0;
+}
+
+.timetableRecord {
+  position: absolute; /*Do not alter*/
+  -moz-border-radius :5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.timetableRecordInner {
+  padding:2px 5px;
+}
+#weeks {
+  margin-top: 1em;
+}
+#weeks td {
+  height: 15px;
+}
+#weeks .ttSelectedWeek {
+  background-color:cornflowerblue;
+  /*#08295C*/
+}
+
+.timetableInnerContent {
+  font-size: 100%;
+}
+
+#linkWeeksRangeError {
+  color: red;
+}
+
+/***********************************************************************/
+/* SIW_GRL   -added by LEWR1   for v8.2.1                              */
+/***********************************************************************/
+
+#grl_message {
+	display : none ;
+	width : 100% ;
+}
+
+.grl_primary {
+	background: #FFF5C3 !important;
+}
+
+caption a:link { color: #FFF; }
+caption a:visited { color: #FFF; }
+caption a:hover { color: #FFF; }
+caption a:active { color: #FFF; }
+
+/***********************************************************************/
+/* WYSIWYG   -added by LEWR1   for v8.2.1                              */
+/***********************************************************************/
+
+.srl_mark_txt {
+	cursor: text;
+}
+
+.srl_expd_fld, .srl_expd_lst, .srl_expd_sel {
+	width : 300px ;
+	background-color : #FFFFCC ;
+}
+
+.srl_expd_lst_outer {
+	border : 1px dashed #000000 ;
+	float : left ;
+	background-color : #FFFFCC ;
+	color : #000000 ;
+	padding : 2px ;
+	width : 610px ;
+}
+
+.srl_expd_lst_inner {
+	border : 1px dashed #000000 ;
+	float : left ;
+	background-color : #FFFFFF ;
+	color : #000000 ;
+	/*font-size : 70% ;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	padding-left : 1px ;
+	padding-right : 1px ;
+	width : 300px ;
+}
+
+.srl_mark_prm, .srl_mark_equ, .srl_mark_com, .srl_mark_reg, .srl_mark_prc {
+	border : 1px dashed #000000 ;
+	float : left ;
+	padding-left : 1px ;
+	padding-right : 1px ;
+	cursor : default ;
+}
+
+.srl_expd_prm, .srl_expd_equ, .srl_expd_com, .srl_expd_reg, .srl_expd_prc {
+	border : 1px dashed #000000 ;
+	float : left ;
+	color : #000000 ;
+	/*font-size : 70% ;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	padding-left : 1px ;
+	width : 300px ;
+	background-color : #FFFFCC ;
+}
+
+.srl_link {
+	text-align : center ;
+	width : 100% ;
+	color : #000000 ;
+	/*font-size : 70% ;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+}
+
+/* End of sits.css */
+
+/***********************************************************************/
+/* WYSIWYG   -added by WRAD2   for v8.4.0                              */
+/***********************************************************************/
+
+.wys_nouni {
+  background-color : #FF9999 !important ;
+}
+
+/***********************************************************************/
+/* Portal no table mode styles   -added by IREL1   for v8.7.0          */
+/***********************************************************************/
+.sitscolumn1notabs {
+  float: left;
+  padding-right: 10px;
+}
+.sitscolumn2notabs {
+  float: left;
+  padding-right: 10px;
+  }
+.sitscolumn3notabs {
+  float: left;
+  padding-right: 10px;
+}
+.sitscontainernotabs{
+  margin:0px 0px 15px 0px;  /* top right bottom left */
+  float:none;
+  width:100%;
+}
+.sitscontitlesectionnotabs{
+  width:100%;
+  /*border: 1px solid #BCBFC4;*/
+  border-bottom: none;
+  /*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+  color: #FFFFFF;
+  padding-bottom: 3px;
+  margin-bottom: 0px; /* used if image not available */
+}
+.sitsContitlenotabs{
+  font-size:105%; /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+  font-weight: bold;
+  margin:1px;
+  margin-left:8px;
+  padding:1px;
+}
+
+p.sitscontitleiconnotabs{
+  float:left;
+  margin:0px;
+  padding:0px;
+}
+
+.sitsconrightimagenotabs {
+  padding:0px;
+  margin:0px;
+  float:right;
+}
+
+.sitsnewcontextnotabs{
+  margin:0px;
+  padding:1px;
+  color:#FFFFFF;
+  list-style-type: none;
+  /*font-size:75%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+}
+.sitsconupdatediconnotabs{
+  float:none;
+  margin:0px;
+  padding:3px;
+}
+.sitsconbordernotabs{
+  border-left: 1px solid #BCBFC4;
+  border-right: 1px solid #BCBFC4;
+  border-bottom: 1px solid #BCBFC4;
+  margin:0px;
+  padding:1px;
+  background-color:#C5D9BD;
+}
+p.sitscontrolsnotabs{
+  /*font-size: 70%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */ /* percentage of the size specifiied above */
+  width:98%;
+  color: #666;
+  font-weight: normal;
+  margin-top:0px;
+  /*padding-top:0px;*/
+  margin-bottom:0px;
+  /*padding-bottom:0px;*/
+  padding:1px;
+  text-align:right;
+  border-top:none;
+  border-left: 1px solid #BCBFC4;
+  border-right: 1px solid #BCBFC4;
+  background-image: url(../images/tabledesc_bg.gif);
+  background-color: #F1EFE2;
+}
+.sitscontrolsnotabs A{
+  COLOR: #666;
+  TEXT-DECORATION: underline;
+}
+
+.sitscondescriptionnotabs{
+  /*font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;*/
+  font-size:85%; /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+  color:  #666;
+  padding:3px;
+  margin-top:0px;
+  /*padding-top:0px;*/
+  margin-bottom:0px;
+  /*padding-bottom:0px;*/
+  background-image: url(../images/tabledesc_bg.gif);
+  background-color: #F1EFE2;
+  border-top:1px solid #CCC;
+  border-left: 1px solid #BCBFC4;
+  border-right: 1px solid #BCBFC4;
+}
+
+.sitscopsectionnotabs{
+  margin-bottom:0px;  /* spacing after message box */
+  margin-top:0px;
+    margin-right:2px;
+  padding:0px;
+  border: 0px solid #BCBFC4;
+  width:100%;
+  background-color:#F4F4F4;
+}
+
+/***********************************************************************/
+/* Portal moved to AA accessibility   -added by LEWR1   for v8.7.1     */
+/***********************************************************************/
+
+.sitscontitlenotabs { /* copy of .sitsContitlenotabs */
+  font-size: 105%; /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+  font-weight: bold;
+  margin: 1px;
+  margin-left: 8px;
+  padding: 1px;
+}
+
+.portalcontitlespan { /* copy of H3 */
+	font-weight: bold;
+	/*font-size: 100%;*/ /* Tribal - amended styles to avoid clashes with sv.css styles (for 8.9.0) */
+	margin: 12px;
+}
+
+.sitsconrightimagenotabs {
+  text-align:right;
+}
+
+.sitsconrightimage {
+  text-align:right;
+}
+
+fieldset.nostyle {
+  border: 0;
+  padding: 0;
+}
+
+fieldset.nostyle legend{
+  display: none;
+}
+
+/***********************************************************************/
+/* Additions to login screen   -added by LEWR1   for v8.8.0            */
+/***********************************************************************/
+
+a.thirdparty img {
+  width: 40px !important;
+  height: 40px !important;
+}
+
+/**************************************************************************/
+/* Styling additions to make sv.css fit slightly better with old styles*/
+/**************************************************************************/
+input[type="submit"]:disabled:not(.sv-btn) {
+	color: #808080; /*sv.css override so buttons in Chrome appear disabled when not using sv-btn class*/
+}
+
+
+/**************************************************************************/
+/* Styling additions to make sv.css fit slightly better with old styles*/
+/* - for testing purposes in 8.9.0. May be removed before release.        */
+/**************************************************************************/
+h2.sitsContitle {
+	font-size: 133%;
+  font-weight: bold;
+  margin:1px 1px 0 1px;
+  padding:8px;
+}
+
+p.sitsconrightimage {
+	float: right;
+}

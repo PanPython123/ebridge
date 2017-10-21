@@ -1,0 +1,44 @@
+<tr>
+                                <td class="sv-col-md-1">{{ Period }}</td>
+                                <td class="sv-col-md-1">{{ Module Code }}</td>
+                                <td class="sv-col-md-3">{{ Module Title }}</td>
+                                <td class="sv-col-md-1">{{ Credit }}</td>
+                                <td class="sv-col-md-1">{{ Mark }}</td>
+                                <td class="sv-col-md-1">{{ Grade }}</td>
+                                <td class="sv-col-md-1">{{ Attempt }}</td>
+                                <td class="sv-col-md-1">
+
+
+
+                                    <div id="{{ Module_Code }}T" style="display:block;">
+
+                                        <a onclick="elementDisplay(&#39;{{ Module_Code }}V&#39;);elementHidden(&#39;{{ Module_Code }}T&#39;)">
+                                            <font color="#0000FF">View</font>
+                                        </a>
+                                        <span class="sitsnewcoptext"></span>
+                                    </div>
+
+                                    <div id="{{ Module_Code }}V" style="display:none;">
+                                        <a onclick="elementDisplay(&#39;{{ Module_Code }}T&#39;);elementHidden(&#39;{{ Module_Code }}V&#39;)">
+                                            <font color="#0000FF">Hide</font>
+                                        </a>
+                                        <table width="100%" class="sitstablegrid">
+                                            <tbody>
+                                                <tr>
+                                                    <th width="30%">Component title</th>
+                                                    <th width="20%" align="center">Assessment type</th>
+                                                    <th width="20%" align="center">Weight</th>
+                                                    <th width="30%" align="center">Mark</th>
+                                                </tr>
+
+
+                                                {{ single_detail }}
+                                                <!-- Resit records -->
+
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+
+                                </td>
+</tr>
