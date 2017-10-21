@@ -1,10 +1,10 @@
 This is just a personal using python oop practice. This is a tool for getting ebridge score data for XJTLU students.
 
 If you run this program directly, you could view your average score if you input the right account and password!
-Some useful instance and method are following:
+Some useful instances and methods are following:
 > self.score_list. #This is most useful, the data structure just like this:
 ```python
-['Attempt': '1',
+[{'Attempt': '1',
   'credit': '5',
   'detail_assessment': [{'assessment_type': 'Coursework',
                          'component_title': 'Writing Tasks',
@@ -29,7 +29,7 @@ Some useful instance and method are following:
   'period': 'SEM2'}
   ]
   ```
-  This is similar as your ebridge one module score:
+  This is similar with your ebridge one module score:
   ![image](http://ww3.sinaimg.cn/large/0060lm7Tly1fko0vy0flrj31kw0enacu.jpg)
   
 > self.name, your name
